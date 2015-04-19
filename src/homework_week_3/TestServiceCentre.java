@@ -37,6 +37,7 @@ public class TestServiceCentre {
         sc1.showAllEmployee();
         System.out.println(employeeSC1.get(0));
         System.out.println(employeeSC1.get(1));
+         System.out.println(employeeSC1.get(2));
 
     }
 }
