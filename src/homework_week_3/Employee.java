@@ -3,15 +3,25 @@ package homework_week_3;
 public abstract class Employee {
     private String name;
     private int salary;
+    private String position;
     private  long IDEmployee;
     private ServiceCentre serviceCentre;
     private static long idGenerator = 1;
 
-    public Employee(String name, int salary, ServiceCentre serviceCentre) {
+    public Employee(String name, int salary, String position,ServiceCentre serviceCentre) {
         this.name = name;
         this.salary = salary;
+        this.position=position;
         IDEmployee=idGenerator++;
         this.serviceCentre = serviceCentre;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getName() {

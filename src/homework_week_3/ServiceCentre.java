@@ -45,7 +45,7 @@ public class ServiceCentre implements Work{
     //Added employee to ServiceCentre
     public  boolean addEmployee (Employee employee){
         boolean added = false;
-        this.employee.add(employee);
+        getEmployee().add(employee);
         added = true;
         return added;
     }
@@ -53,21 +53,19 @@ public class ServiceCentre implements Work{
     //Remove employee to ServiceCentre
     public  boolean removeEmployee (Employee employee){
         boolean remove=false;
-        boolean existence = this.employee.contains(employee);
+        boolean existence = getEmployee().contains(employee);
         if (existence){
-            this.employee.remove(employee);
+            getEmployee().remove(employee);
             remove=true;
         } else {
             System.out.println("The service centre has not this employee");
         }
         return remove;
     }
-
+    //Show all employee service centre
     public void showAllEmployee() {
-
-       // for (int i=0; i<getEmployee().size(); i++)
-       for (Employee x: employee){
-            System.out.println(x);
+        for (int i=0; i<getEmployee().size(); i++) {
+            System.out.println(getEmployee().get(i));
         }
     }
 

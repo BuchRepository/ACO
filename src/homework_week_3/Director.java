@@ -13,8 +13,9 @@ public class Director extends Employee{
         System.out.println("I am working");
     }
 
+    //change address a Service Centre
     public boolean changeAddress (Address address){
-        this.getServiceCentre().changeAddress(address);
+        getServiceCentre().changeAddress(address);
         return true;
     }
 
@@ -24,7 +25,7 @@ public class Director extends Employee{
     }
 
     public boolean removeEmployee (Employee employee){
-        this.getServiceCentre().removeEmployee(employee);
+        getServiceCentre().removeEmployee(employee);
         return true;
     }
 
