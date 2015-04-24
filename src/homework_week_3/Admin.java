@@ -5,7 +5,8 @@ package homework_week_3;
  */
 public class Admin extends Employee{
 
-    public Admin(String name, int salary, ServiceCentre serviceCentre) {
-        super(name, salary, serviceCentre);
+
+    public Admin(String name, int salary, String position, ServiceCentre serviceCentre) {
+        super(name, salary, position, serviceCentre);
     }
 }

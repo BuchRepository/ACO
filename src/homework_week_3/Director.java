@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Director extends Employee{
 
-    public Director(String name, int salary, ServiceCentre serviceCentre) {
-        super(name, salary, serviceCentre);
+    public Director(String name, int salary, String position, ServiceCentre serviceCentre) {
+        super(name, salary, position, serviceCentre);
     }
 
     public void work(){

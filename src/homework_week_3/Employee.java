@@ -12,7 +12,7 @@ public abstract class Employee {
         this.name = name;
         this.salary = salary;
         this.position=position;
-        IDEmployee=idGenerator++;
+        this.IDEmployee=idGenerator++;
         this.serviceCentre = serviceCentre;
     }
 

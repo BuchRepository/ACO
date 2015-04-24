@@ -7,7 +7,7 @@ public class TestHelper {
     public static void main (String[]args){
         int[] mas = new int[10];
             for (int i = 0; i < mas.length; i++) {
-                mas[i] = (int) (Math.random() * 20);
+                mas[i] = (int) (Math.random()*20);
             }
         for (int i = 0; i < mas.length; i++) {
 

@@ -2,6 +2,8 @@ package homework_week_3;
 
 import javafx.scene.input.DataFormat;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Created by Администратор on 19.04.2015.
  */
@@ -9,13 +11,20 @@ public class Repair {
     private RepairExpert repairExpert;
     private Technics technics;
     private String status;
-    private DataFormat dateTakeRepair;
-    private DataFormat dateReturnRepair;
+    private SimpleDateFormat dateTakeRepair;
+    private SimpleDateFormat dateReturnRepair;
     private double price;
 
-    public Repair(Technics technics, double price) {
+    public Repair() {
+    }
+
+    public Repair(RepairExpert repairExpert, Technics technics, String status) {
+        this.repairExpert = repairExpert;
         this.technics = technics;
-        this.price = price;
+        this.status = "inWork";
+        this.dateTakeRepair = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        this.dateReturnRepair = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        this.price = technics.getPrice()*0.1;;
     }
 
     public RepairExpert getRepairExpert() {
@@ -42,19 +51,19 @@ public class Repair {
         this.status = status;
     }
 
-    public DataFormat getDateTakeRepair() {
+    public SimpleDateFormat getDateTakeRepair() {
         return dateTakeRepair;
     }
 
-    public void setDateTakeRepair(DataFormat dateTakeRepair) {
+    public void setDateTakeRepair(SimpleDateFormat dateTakeRepair) {
         this.dateTakeRepair = dateTakeRepair;
     }
 
-    public DataFormat getDateReturnRepair() {
+    public SimpleDateFormat getDateReturnRepair() {
         return dateReturnRepair;
     }
 
-    public void setDateReturnRepair(DataFormat dateReturnRepair) {
+    public void setDateReturnRepair(SimpleDateFormat dateReturnRepair) {
         this.dateReturnRepair = dateReturnRepair;
     }
 
@@ -66,10 +75,13 @@ public class Repair {
         this.price = price;
     }
 
-    public void addRepair (Technics technics){
-        Repair repair = new Repair(technics, (technics.getPrice()*0.1));
-      //  this.repairExpert=repairExpert.get
-
-
+    public String toString (){
+        return ("repairExpert = "+ getRepairExpert()+
+                ", technics ="+getTechnics()+
+                ", status = "+getStatus()+
+                ", date take repair = "+getDateTakeRepair()+
+                ", date return repair = "+getDateReturnRepair()+
+                ", price");
     }
+
 }

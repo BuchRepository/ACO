@@ -11,19 +11,17 @@ public class Helper {
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 20);
         }
-         //   for (int i = 0; i < mas.length; i++) {
-         //  System.out.print(mas[i]+" ");
         return mas;
     }
 
     public int randomEmployee(ArrayList <Employee> employee) {
-        int sizeRepairExpert=0;
+        int sizeRepairExpert=0;   //counter under repairExpert
         for (Employee element: employee) {
             if (element.getPosition() == "RepairExpert") {
                 sizeRepairExpert++;
             }
         }
-            int random = (int) (Math.random() * sizeRepairExpert);
+            int random = (int)(Math.random()*sizeRepairExpert);
             return  random;
     }
 }
