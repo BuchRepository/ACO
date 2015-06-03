@@ -1,15 +1,10 @@
 package homework_week_3;
 
 /**
- * Created by Администратор on 24.04.2015.
+ * Created by Администратор on 03.05.2015.
  */
-public class TestRepair {
+public class TestFinance {
     public static void main(String[] args) {
-
-
-
-
-
 
     }
 }

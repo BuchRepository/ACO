@@ -2,24 +2,41 @@ package homework_week_3;
 
 import javafx.scene.input.DataFormat;
 
+import javax.xml.crypto.Data;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Администратор on 15.03.2015.
  */
 public class Technics {
-    private static long idTechnics = 1;
-    private String name;
-    private double price;
-    private SimpleDateFormat dateBuy;
-    private  long IDTechnics;
+    private static long idTechnics = 1;//ID number technics
+    private String name;//Name technics
+    private double price;//price techniks
+    private Client ownerTechnics; //owner Techniks
+    private SimpleDateFormat dateBuy;//date and time then bought techniks client
+    private Date currentDate; //current time, support time for dateBuy
+    private StatusTechniks status;//conditions techniks
+    private  long IDTechnics;//ID number technics
 
     public Technics(String name, double price) {
         this.IDTechnics=idTechnics++;
         this.name = name;
         this.price = price;
-        this.dateBuy = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        this.ownerTechnics=null;
+        this.status = StatusTechniks.NEW;
+        this.currentDate = new Date();
+        this.dateBuy=new SimpleDateFormat("dd.MM.yyyy hh:mm");
+    }
+
+    public void setOwnerTechnics(Client ownerTechnics) {
+        this.ownerTechnics = ownerTechnics;
+    }
+
+    public Client getOwnerTechnics() {
+        return ownerTechnics;
     }
 
     public long getIDTechnics() {
@@ -50,11 +67,37 @@ public class Technics {
         this.dateBuy = dateBuy;
     }
 
+    public StatusTechniks getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusTechniks status) {
+        this.status = status;
+    }
+
+    //show condition techniks
+    public StatusTechniks showStatus (){
+        return getStatus();
+    }
+
+    //show date for purchase techniks
+    public String dateForPurchase(){
+        return  getDateBuy().format(currentDate);
+    }
+
+    //show price for techniks
+    public double priceForTechniks(){
+        return getPrice();
+    }
+
     public String toString (){
-        return ("ID Technics = "+ getIDTechnics()+
-                ", name ="+getName()+
-                ", price = "+getPrice()+
-                ", date Buy = "+getDateBuy()
-                );
+        return ("Information about techniks\n:"+
+                "ID    | name    |  price    |   status    |    date of purchase\n"+
+                "   "+getIDTechnics()+
+                "   "+getName()+
+                "   "+getPrice()+
+                "   "+getStatus().name()+
+                "   "+getDateBuy().format(currentDate)
+        );
     }
 }

@@ -22,8 +22,9 @@ public class ArrayList2 {
         int num=s.indexOf(egg);
         System.out.println(egg.getName()+eg2.getSize()+num);
         s.remove(eg2);
-
-        System.out.println(eg2.getName()+egg.getSize()+num);
+        for (Egg name: s) {
+            System.out.println(name);
+        }
 
 
 

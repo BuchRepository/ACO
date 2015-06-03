@@ -6,5 +6,4 @@ package homework_week_3;
 public interface Work {
     public boolean addEmployee (Employee employee);
     public boolean removeEmployee (Employee employee);
-    public boolean changeAddress (Address address);
 }

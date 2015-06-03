@@ -5,6 +5,7 @@ package test.ArrayList;
  */
 public class Egg {
     private int size;
+    private String name;
 
     public String getName() {
         return name;
@@ -22,5 +23,8 @@ public class Egg {
         this.size = size;
     }
 
-    private String name;
+    public String toString (){
+        return ("Name - "+getSize()+
+        " , size - "+getSize());
+    }
 }
