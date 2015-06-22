@@ -11,6 +11,7 @@ public class Client {
     public Client(String name, double money) {
         this.name = name;
         this.money = money;
+        this.dataBase=null;
     }
 
     public DataBase getDataBase() {
@@ -65,10 +66,10 @@ public class Client {
 
     public String toString (){
         return ("Name = "+ getName()+
-                ", money "+getMoney()+"$\n"+
-                "Clients techniks: \n"+dataBase.getTechnics()+
-                "Clients repair: \n"+ dataBase.getRepair()
-        );
+                ", money "+getMoney()+"$\n");
+    /*            "Clients techniks: \n"+dataBase.getTechnics()+
+                "Clients repair: \n"+ dataBase.getRepair()*/
+
     }
 }
 

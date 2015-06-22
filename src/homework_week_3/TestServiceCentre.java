@@ -29,8 +29,8 @@ public class TestServiceCentre {
         technics1.setOwnerTechnics(client1);
         System.out.println(technics1);
 
-        DataBase db=new DataBase();
-        db.addRepair(sc1,technics1);
+        DataBase db = new DataBase();
+        System.out.println(db.addRepair(sc1,technics1));
 
 
 

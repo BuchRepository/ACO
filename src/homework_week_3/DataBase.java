@@ -11,8 +11,8 @@ public class DataBase {
     private int count;
 
     public DataBase() {
-        this.repair = new ArrayList <Repair> (10);
-        this.technics = new ArrayList<Technics> (10);
+        this.repair = new ArrayList <Repair> ();
+        this.technics = new ArrayList<Technics> ();
     }
 
     public int getCount() {
@@ -37,7 +37,8 @@ public class DataBase {
 
     public boolean addRepair (ServiceCentre sc, Technics technics){
         boolean addRepair=false;
-        getRepair().add(new Repair(technics));
+        Repair r = new Repair(technics);
+        getRepair().add(r);
         getTechnics().add(technics);
         technics.setStatus(StatusTechniks.INWORKING);
         int sizeRepairExpert=0;   //counter under repairExpert
@@ -47,18 +48,26 @@ public class DataBase {
             if (element.getPosition() == Position.REPAIREXPERT) {
                 sizeRepairExpert++;
                 currentExpert = (RepairExpert)element;
-                if(currentExpert.getDataBase().getRepair().size()<3){
-                  repair.get(count).setRepairExpert(currentExpert);
+
+                if( currentExpert.getDataBase()==(null)) {
+                    currentExpert.setDataBase(new DataBase());
+                    currentExpert.getDataBase().setRepair(getRepair());
+                    currentExpert.getDataBase().setTechnics(getTechnics());
+                    if (currentExpert.getDataBase().getRepair().size() < 3) {
+                        getRepair().get(count).setRepairExpert(currentExpert);
+                    }
                 }
                 count++;
                 addRepair=true;
                 break;
             }
-            else {
-                System.out.println("All repairExpert working or repairExpert have not");
-                repair.get(count).setRepairExpert(null);
-            }
         }
+        if (addRepair==false)
+        {
+            System.out.println("All repairExpert working or repairExpert have not");
+            repair.get(count).setRepairExpert(null);
+        }
+
         return addRepair;
     }
 

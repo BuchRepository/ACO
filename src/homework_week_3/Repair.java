@@ -20,12 +20,10 @@ public class Repair {
     private long IDRepair;
     private double NDS;
 
-    public Repair() {
-    }
 
     public Repair(Technics technics) {
         this.IDRepair=idGenerator++;
-        this.name="Repair"+IDRepair;
+        this.name="Repair"/*+IDRepair*/;
         this.repairExpert = null;
         this.technics = technics;
         this.dateTakeRepair = new SimpleDateFormat("dd.MM.yyyy hh:mm");
