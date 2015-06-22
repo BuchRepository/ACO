@@ -92,8 +92,6 @@ public class Repair {
 
 
 
-
-
     public String toString (){
         return ("\n"+
                 "Information about repair:\n"+

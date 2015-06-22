@@ -10,9 +10,9 @@ public class DataBase {
     private  ArrayList <Technics> technics;
     private int count;
 
-    public DataBase(ArrayList<Repair> repair, ArrayList<Technics> technics) {
-        this.repair = repair;
-        this.technics = technics;
+    public DataBase() {
+        this.repair = new ArrayList <Repair> (10);
+        this.technics = new ArrayList<Technics> (10);
     }
 
     public int getCount() {
@@ -58,7 +58,6 @@ public class DataBase {
                 System.out.println("All repairExpert working or repairExpert have not");
                 repair.get(count).setRepairExpert(null);
             }
-
         }
         return addRepair;
     }

@@ -14,6 +14,7 @@ public class TestServiceCentre {
 
         ArrayList <Employee> employeeSC1 =new ArrayList<Employee>();
         ServiceCentre sc1 = new ServiceCentre("ITIS", addressSC1, employeeSC1);
+        Client client1=new Client("Julia",1000);
 
         Director directorSC1=new Director("Vasya",1111, 1000,Position.DIRECTOR,sc1);
         Director director2SC1=new Director("Sergey", 2222,4000, Position.DIRECTOR,sc1);
@@ -24,13 +25,18 @@ public class TestServiceCentre {
         employeeSC1.add(adminSC1);
         employeeSC1.add(repairExpertSC1);
 
-        Helper helper = new Helper();
+        Technics  technics1=new Technics("TV Panasonic", 200);
+        technics1.setOwnerTechnics(client1);
+        System.out.println(technics1);
 
-        System.out.println("You in System direct service centre");
-        helper.inputInSystem(sc1);
-        helper.showPossibleCommandForChoiceUser(sc1);
+        DataBase db=new DataBase();
+        db.addRepair(sc1,technics1);
 
 
+
+/*        System.out.println("You in System direct service centre");
+        sc1.inputInSystem();
+        sc1.showPossibleCommandForChoiceUser();*/
 
 /*
         directorSC1.addEmployee(director2SC1);

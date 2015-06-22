@@ -19,7 +19,7 @@ public class Director extends Employee{
         return true;
     }
     //add Employee a Service centre
-    public boolean addEmployee (Employee employee){
+    public boolean addEmployee (Employee employee)throws Exception{
         getServiceCentre().addEmployee(employee);
         return true;
     }

@@ -13,14 +13,14 @@ import java.util.Scanner;
  * Created by Администратор on 24.04.2015.
  */
 public class Helper {
-    private int chooseAction;
+   /* private int chooseAction;
     int ordinalPosition;
-    Employee userInSystem;
+    Employee userInSystem;*/
 
     public int[] randomNumber() {
         int[] mas = new int[10];
-        for (int i = 0; i < mas.length; i++) {
-            mas[i] = (int) (Math.random() * 20);
+        for (int i = 0; i<mas.length; i++) {
+            mas[i] =(int)(Math.random()*20);
         }
         return mas;
     }
@@ -36,7 +36,7 @@ public class Helper {
         return choicePosition;
     }*/
 
-    public Employee inputInSystem (ServiceCentre serviceCentre) {
+/*    public Employee inputInSystem (ServiceCentre serviceCentre) {
         Scanner sc = new Scanner(System.in); // System.in - console
         boolean userFound = false;
         String userName;
@@ -51,7 +51,7 @@ public class Helper {
                     System.out.println("Input your password: ");
                     if (sc.hasNextInt()) {
                         userPassword = sc.nextInt(); // get inputs value from console
-                            if (serviceCentre.getEmployee().get(i).getPassword() == userPassword){
+                            if (serviceCentre.getEmployee().get(i).getPassword()==userPassword){
                                 userFound=true;
                                 ordinalPosition = userInSystem.getPosition().ordinal()+1;
                             }
@@ -60,11 +60,11 @@ public class Helper {
             }
             if (userFound==true){
                 System.out.println("Welcome to system");
-            }//System.out.println("Your profile does not find");
+            }
         }
         return userInSystem;
-    }
-
+    }*/
+/*
     public void showPossibleCommandForChoiceUser (ServiceCentre serviceCentre) {
         Scanner sc = new Scanner(System.in); // System.in - console
 
@@ -75,11 +75,11 @@ public class Helper {
                         "2) Show all employees Service centre\n" +
                         "3) Show finance about Service centre\n");
                 System.out.println("Input number your choices command: \n");
-                if (sc.hasNextInt()) {
-                    chooseAction = sc.nextInt(); // get inputs value from console
-                }
-                commandForAdministrator(serviceCentre);
-                break;
+            if (sc.hasNextInt()) {
+                chooseAction = sc.nextInt(); // get inputs value from console
+            }
+            commandForAdministrator(serviceCentre);
+            break;
             case 2://User enter  as a RepairExpert
                 System.out.println("\nList of possible command for " + Position.REPAIREXPERT.toString());
                 System.out.println("\n1) Repair this technics\n" +
@@ -133,7 +133,7 @@ public class Helper {
                 }
                 break;
         }
-    }
+    }*/
 }
 
 
