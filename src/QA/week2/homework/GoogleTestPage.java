@@ -1,5 +1,6 @@
 package QA.week2.homework;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class GoogleTestPage{
     private WebDriver driver;
+    public static final Logger LOG=Logger.getLogger(GoogleTestPage.class);
 
     @Before
     public void before(){
@@ -25,6 +27,7 @@ public class GoogleTestPage{
 
     @Test
     public void test() {
+        LOG.info("Create class HomePage --> page enters");
         HomePage page = new HomePage(driver);
         LoginPage loginPage = page.search(driver);
         loginPage.method();

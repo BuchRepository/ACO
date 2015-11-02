@@ -1,5 +1,4 @@
 package QA.week2.homework;
-
 import org.openqa.selenium.WebDriver;
 
 /**

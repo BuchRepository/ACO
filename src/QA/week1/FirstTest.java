@@ -1,4 +1,4 @@
-package QA_week1.day2;
+package QA.week1;
 
 
 import org.junit.*;
@@ -27,20 +27,17 @@ public class FirstTest {
         public void test1() throws Exception {
             driver.get(baseUrl);
 
-            driver.findElement(By.cssSelector("a.ellos.active")).click(); //Logo
+            driver.findElement(By.cssSelector("[id='showlogin']")).click(); //Logo
             driver.findElement(By.cssSelector("#showlogin>span")).click(); //login link
+            driver.findElement(By.cssSelector("#ctl00_ctl00_conMain_conMain_LoginControl_LoginUsername")).click();
+            driver.findElement(By.cssSelector("#ctl00_ctl00_conMain_conMain_LoginControl_LoginUsername")).sendKeys("fcmalin@gmail.com");
+            driver.findElement(By.cssSelector("#LoginPasswordText")).sendKeys("vfhufhbnf1895");
+            driver.findElement(By.cssSelector("#ctl00_ctl00_conMain_conMain_LoginControl_LoginButton")).click();
 
-            driver.findElement(By.cssSelector("#ctl00_ctl00_conMain_conMain_LoginControl_LoginButton")).click(); //login button
-        }
-
-        @Test
-        public void test2() throws Exception {
-
-            driver.findElement(By.cssSelector("")).click(); //your locators
-            driver.findElement(By.cssSelector("")).click();
+            Assert.assertTrue("Incorrect work login form", driver.findElement(By.cssSelector(".ellos.active")).isDisplayed());
+            System.out.println("FirstTest.test1");
 
         }
-
 
         @AfterClass
         public static void tearDown() throws Exception {
